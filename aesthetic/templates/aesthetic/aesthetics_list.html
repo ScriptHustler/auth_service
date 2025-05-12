@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Aesthetics
+{% endblock %}
+
+{% block content%}
+<section>
+      <h1>Aesthetics</h1>
+     
+      {% for aesthetic in aesthetics %}
+      <article class="aesthetic">
+            <h2>
+                  <a href="{% url 'aesthetics:page' slug=aesthetic.slug %}">
+                  {{aesthetic.title}} </a>
+            </h2>
+            <p>{{aesthetic.date}}</p>  
+            <p>{{aesthetic.body}}</p> 
+      </article>  
+      {% endfor %}
+</section>
+{% endblock %}
+
+
