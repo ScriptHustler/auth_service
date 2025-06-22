@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+  {% block content %}
+
+<style>
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+</style>
+
+{% comment %} CLEANED the code by creating several indiviual components {% endcomment %}
+      <h1>Home</h1>
+
+      {% comment %} <h1>Click me to visit <a href="room/">ROOM</a></h1> {% endcomment %}
+      <div class="home-container">
+
+        <div>
+          {% comment %} including the topics_component {% endcomment %}
+          {% include 'foot/topics_component.html' %}
+        </div>
+
+        <div>
+          <h5>{{ room_count }} Rooms Availaible</h5>
+          <a href="{% url 'create-room' %}">create-room</a>
+          {% comment %} including the feed_component {% endcomment %}
+          {% include 'foot/feed_component.html' %}
+        </div>
+
+        <div>
+          {% comment %} including the activity_component {% endcomment %}
+          {% include 'foot/activity_component.html' %}
+        </div>
+
+      </div>
+{% endblock %}
